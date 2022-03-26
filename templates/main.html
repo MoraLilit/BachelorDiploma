@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find your path</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+</head>
+<body>
+
+    <div class="header">
+      <form id="title">
+        <h1>Wanna find a relationship between co-authors?</h1>
+        <p id="title">You came to the right place</p>
+    </form>
+    </div>
+
+    <form id="main" action="{{ url_for('start') }}">
+        <div class="row">
+            <div class="column side">
+                <p id="title1">Choose participants</p>
+                <a name="main"></a>
+                <form action="{{ url_for('lists') }}">
+                    <p id="author"><label for="author">Root Author</label></p>
+                    <input type="text" id="author" name="author" list="root_authors">
+                    <datalist id="root_authors">
+                        {% for i in root_author %}
+                            <option value="{{ i }}"> </option>
+                        {% endfor %}
+                    </datalist>
+                    <p id="coauthor"><label for="coauthor">Co-Author</label></p>
+                    <input type="text" id="coauthor" name="coauthor" list="coauthors">
+                    <datalist id="coauthors">
+                        {% for i in coauthor %}
+                            <option value="{{ i }}"> </option>
+                        {% endfor %}
+                    </datalist>
+                    <br><br><input id="find" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" value="Find">
+                </form>
+
+
+            </div>
+
+            <div class="column middle">
+                <p id="title1"><label for="number">Path between them</label></p>
+
+                {% if error %}
+                    <p id="title">{{ error }}</p>
+                {% endif %}
+                <div id="path">
+                    {% for i in result_path %}
+                        <i id="title">{{ i.title() }}</i>
+                        <i id="title">-></i>
+                    {% endfor %}
+                    <i id="title">{{ find }}</i>
+                </div>
+
+
+            </div>
+
+            <div class="column side">
+                <p id="title1"><label for="number">Co-authorship degree</label></p>
+                <p id="number"><label for="number">{{ result_number }}</label></p>
+                <p id="number2">{{ text }}</p>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="footer">
+        <p>Created by ML. Have a good day</p>
+    </div>
+
+
+</body>
+</html>

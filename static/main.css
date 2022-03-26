@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: peachpuff; /* For browsers that do not support gradients */
+
+}
+
+.header {  background-image: linear-gradient(ghostwhite, whitesmoke);
+    padding: 30px;}
+
+h1 { color: #d54d7b;
+    font-family: "Great Vibes", cursive;
+    font-size: 55px;
+    line-height: 50px;
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff; }
+
+
+p#title { color: dimgrey;
+    font-size: 29px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 20px; }
+
+p#title1 { color: #d54d7b;
+    font-size: 29px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 20px; }
+
+/* Container for flexboxes */
+.row {
+    background-image: linear-gradient(whitesmoke, gray);
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+/* Style the footer */
+.footer {
+    background-image: linear-gradient(gray, dimgray);
+    padding: 10px;
+    text-align: right;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+p#author { color: dimgray;
+    font-size: 20px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 20px;
+    text-shadow: 0 1px 1px #fff;
+    text-align: center;}
+
+input#author {
+    margin-left: 16.5%;
+    width: 200px;
+}
+
+p#coauthor { color: dimgrey;
+    font-size: 20px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 20px;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 40px;
+    text-align: center;
+}
+
+input#coauthor {
+    margin-left: 16.5%;
+    width: 200px;
+}
+
+#main {
+
+}
+
+#find {
+    margin-left: 16.5%;
+    margin-top: 5%;
+    width: 200px;
+}
+
+p#number { color: darkred;
+    font-size: 39px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px #000;
+    padding-top: 20px; }
+
+p#number2 { color: dimgray;
+    font-size: 19px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 20px; }
+
+i#title { color: darkred;
+    font-size: 25px;
+    font-family: "Libre Baskerville", serif;
+    line-height: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px #000;
+    padding-top: 20px;
+}
+
+div#path {
+
+    margin-top: 6%;
+    text-align: center;
+}
